@@ -1,15 +1,15 @@
 // ==UserScript==
-// @name        Typeset.io (Scispace) Premium Unlock
+// @name        Typeset.io (Scispace) Userscript
 // @namespace   Violentmonkey Scripts
 // @match       https://typeset.io/*
 // @grant       none
-// @version     1.0.2
+// @version     1.0.2.1
 // @require     https://greasyfork.org/scripts/455943-ajaxhooker/code/ajaxHooker.js?version=1124435
 // @downloadURL https://github.com/imjustmaxie/userscripts/raw/refs/heads/main/typeset.js
 // @updateURL   https://github.com/imjustmaxie/userscripts/raw/refs/heads/main/typeset.js
 // @author      ijm
 // @run-at      document-start
-// @description Unlocks Scispace's Typeset.io premium features without login (except PDF to video).
+// @description Unlocks Scispace's Typeset.io features without login (except PDF to video).
 // ==/UserScript==
 /* global ajaxHooker*/
 
@@ -29,18 +29,12 @@
               request.response = res => {
                 //console.log(res.responseText);
                 const resp = JSON.parse(res.responseText);
-                if (typeof resp.has_access != 'undefined' && (resp.has_access == false )) {
-                    resp.has_access = true;
-                }
+                if (typeof resp.has_access != 'undefined' && (resp.has_access == false )) {resp.has_access = true;}
                 if (typeof resp.allowed_count != 'undefined' && (resp.allowed_count != null && resp.allowed_count <=0 )) {
                   resp.allowed_count = 1;
                 }
-                if (typeof resp.total_consumed_count != 'undefined') {
-                  resp.total_consumed_count = 0;
-                }
-                if (typeof resp.consumed_count != 'undefined') {
-                    resp.consumed_count = 0;
-                }
+                if (typeof resp.total_consumed_count != 'undefined') {resp.total_consumed_count = 0;}
+                if (typeof resp.consumed_count != 'undefined') {resp.consumed_count = 0;}
                 res.responseText = JSON.stringify(resp);
                 //console.log(res.responseText);
               };
@@ -50,9 +44,7 @@
               request.response = res => {
                 const resp = JSON.parse(res.responseText);
                 const a = "data" in resp ? resp.data : resp;
-                a.forEach((element) =>{
-                  element.has_access = true;
-                });
+                a.forEach((element) =>{element.has_access = true;});
                 res.responseText = JSON.stringify("data" in resp ? (resp.data=a,resp) : a );
               };
           }
