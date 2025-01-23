@@ -6,6 +6,7 @@
 // @version     1.0
 // @require     https://greasyfork.org/scripts/455943-ajaxhooker/code/ajaxHooker.js?version=1124435
 // @downloadURL https://github.com/imjustmaxie/userscripts/raw/refs/heads/main/typeset.js
+// @updateURL   https://github.com/imjustmaxie/userscripts/raw/refs/heads/main/typeset.js
 // @author      ijm
 // @run-at      document-start
 // @description Unlocks Scispace's Typeset.io premium features without login (except PDF to video).
