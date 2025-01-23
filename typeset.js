@@ -38,7 +38,9 @@
                 if (typeof resp.total_consumed_count != 'undefined') {
                   resp.total_consumed_count = 0;
                 }
-                resp.consumed_count = 0;
+                if (typeof resp.consumed_count != 'undefined') {
+                    resp.consumed_count = 0;
+                }
                 res.responseText = JSON.stringify(resp);
                 //console.log(res.responseText);
               };
