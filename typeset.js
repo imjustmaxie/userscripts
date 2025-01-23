@@ -29,7 +29,9 @@
               request.response = res => {
                 //console.log(res.responseText);
                 const resp = JSON.parse(res.responseText);
-                resp.has_access = true;
+                if (typeof resp.has_access != 'undefined' && (resp.has_access == false )) {
+                    resp.has_access = true;
+                }
                 if (typeof resp.allowed_count != 'undefined' && (resp.allowed_count != null && resp.allowed_count <=0 )) {
                   resp.allowed_count = 1;
                 }
