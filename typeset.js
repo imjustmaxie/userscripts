@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://typeset.io/*
 // @grant       none
-// @version     1.0
+// @version     1.0.1
 // @require     https://greasyfork.org/scripts/455943-ajaxhooker/code/ajaxHooker.js?version=1124435
 // @downloadURL https://github.com/imjustmaxie/userscripts/raw/refs/heads/main/typeset.js
 // @updateURL   https://github.com/imjustmaxie/userscripts/raw/refs/heads/main/typeset.js
