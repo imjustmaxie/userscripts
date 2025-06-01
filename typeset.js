@@ -24,7 +24,8 @@
               || request.url.includes('hooks/paraphraser') || request.url.includes('hooks/ask-question')
               || request.url.includes('hooks/concept-search') || request.url.includes('hooks/copilot-messages')
               || request.url.endsWith('hooks/extract-data') || request.url.includes('hooks/podcasts')
-              || request.url.endsWith('hooks/column-data-export') || request.url.endsWith('hooks/ai-detector') )
+              || request.url.endsWith('hooks/column-data-export') || request.url.endsWith('hooks/literature-review/agentic')
+              || request.url.endsWith('hooks/ai-detector') )
   
               {
               request.response = res => {
@@ -35,6 +36,7 @@
                   resp.allowed_count = 1;
                 }
                 if (typeof resp.total_consumed_count != 'undefined') {resp.total_consumed_count = 0;}
+                if (typeof resp.time_division_consumed_count != 'undefined') {resp.time_division_consumed_count = 0;}
                 if (typeof resp.consumed_count != 'undefined') {resp.consumed_count = 0;}
                 res.responseText = JSON.stringify(resp);
                 //console.log(res.responseText);
