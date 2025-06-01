@@ -2,6 +2,7 @@
 // @name        Typeset.io (Scispace) Userscript
 // @namespace   Violentmonkey Scripts
 // @match       https://typeset.io/*
+// @match       https://scispace.com/*
 // @grant       none
 // @version     1.0.2.1
 // @require     https://greasyfork.org/scripts/455943-ajaxhooker/code/ajaxHooker.js?version=1124435
